@@ -32,7 +32,7 @@ public class ClienteService {
         //definir como ativo por padrão
         cliente.setAtivo(true);
 
-        return clienteRepository.save(Cliente)
+        return clienteRepository.save(cliente);
     }
 
     /*
@@ -48,7 +48,7 @@ public class ClienteService {
      */
     @Transactional(readOnly = true)
     public Optional<Cliente> buscarPorEmail(String email){
-        return clienteRepository.findByEMail(email);
+        return clienteRepository.findByEmail(email);
     }
 
     /*
@@ -95,6 +95,7 @@ public class ClienteService {
      */
     @Transactional(readOnly = true)
     public List<Cliente> buscarPorNome(String nome){
+
         return clienteRepository.findByNomeContainingIgnoreCase(nome);
     }
 
