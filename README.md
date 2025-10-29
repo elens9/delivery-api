@@ -39,3 +39,25 @@ Sistema de delivery desenvolvido com Spring Boot e Java 21.
 Elen Sant'Anna Filipeto - Arquitetura de Sistemas API REST Full com Java Springboot 
 
 Desenvolvido com JDK 21 e Spring Boot 3.5.7
+
+## Entregáveis Roteiro 1
+- Screenshot do terminal mostrando java -version
+    <img src="img.png" width="70%">
+
+- Screenshot do git --version funcionando
+    <img src="img_1.png" width="70%">
+
+- Screenshot da configuração do projeto no Spring Initializr
+    <img src="img_2.png" width="75%">
+
+- URL repositório público no GitHub:
+  https://github.com/elens9/delivery-api-elen
+
+- Screenshot commit inicial
+  <img src="img_3.png" width="70%">
+
+    
+
+
+
+
