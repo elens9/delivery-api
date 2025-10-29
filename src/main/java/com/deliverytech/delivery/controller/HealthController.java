@@ -23,7 +23,7 @@ public class HealthController {
     @GetMapping("/info")
     public  AppInfo info(){
         return new AppInfo(
-                "",
+                "Delivery Tech API",
                 "1.0.0",
                 "Elen Sant'Anna Filipeto",
                 "JDK 21",
