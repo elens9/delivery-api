@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,6 +31,9 @@ public class ClienteService {
 
         //definir como ativo por padrão
         cliente.setAtivo(true);
+
+        //definindo dataCadastro
+        cliente.setDataCadastro(LocalDateTime.now());
 
         return clienteRepository.save(cliente);
     }
@@ -86,7 +89,7 @@ public class ClienteService {
     public void inativar(Long id){
         Cliente cliente = buscarPorId(id).orElseThrow(() -> new IllegalArgumentException("Cliente não encontrado " + id));
 
-        cliente.inativar();;
+        cliente.inativar();
         clienteRepository.save(cliente);
     }
 
