@@ -42,19 +42,31 @@ Desenvolvido com JDK 21 e Spring Boot 3.5.7
 
 ## Entregáveis Roteiro 1
 - Screenshot do terminal mostrando java -version
-    <img src="img.png" width="70%">
+  <p align="center"><img src="img.png" width="70%"></p>
 
 - Screenshot do git --version funcionando
-    <img src="img_1.png" width="70%">
+  <p align="center"><img src="img_1.png" width="70%"></p>
 
 - Screenshot da configuração do projeto no Spring Initializr
-    <img src="img_2.png" width="75%">
+  <p align="center"><img src="img_2.png" width="75%"></p>
 
 - URL repositório público no GitHub:
   https://github.com/elens9/delivery-api-elen
 
 - Screenshot commit inicial
-  <img src="img_3.png" width="70%">
+  <p align="center"><img src="img_3.png" width="70%"></p>
+
+- Screenshot estrutura de pastas do projeto
+  <p align="center"><img src="img_4.png" width="50%"></p> 
+
+- Screenshot do endpoint funcionando no navegador
+  <p align="center"><img src="img_5.png" width="70%"></p>
+
+
+
+
+
+
 
     
 
