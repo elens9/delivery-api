@@ -2,6 +2,7 @@ com\deliverytech\delivery\service\ProdutoService.class
 com\deliverytech\delivery\entity\Produto.class
 com\deliverytech\delivery\service\ClienteService.class
 com\deliverytech\delivery\repository\RestauranteRepository.class
+com\deliverytech\delivery\controller\RestauranteController.class
 com\deliverytech\delivery\entity\Cliente.class
 com\deliverytech\delivery\repository\PedidoRepository.class
 com\deliverytech\delivery\entity\Restaurante.class
