@@ -20,18 +20,17 @@ public class Produto {
     private Long id;
     private String produto;
     private String categoria;
-    private float valor;
-    private int disponibilidade;
+    private Float valor;
     private String restaurante;
 
     @Column(name = "data_cadastro")
     private LocalDateTime dataCadastro;
 
     @Column(nullable = true)
-    private Boolean ativo;
+    private Boolean disponivel;
 
     public void inativar(){
-        this.ativo = false;
+        this.disponivel = false;
     }
 
 

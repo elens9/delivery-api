@@ -1,0 +1,14 @@
+com\deliverytech\delivery\service\ProdutoService.class
+com\deliverytech\delivery\entity\Produto.class
+com\deliverytech\delivery\service\ClienteService.class
+com\deliverytech\delivery\repository\RestauranteRepository.class
+com\deliverytech\delivery\entity\Cliente.class
+com\deliverytech\delivery\repository\PedidoRepository.class
+com\deliverytech\delivery\entity\Restaurante.class
+com\deliverytech\delivery\controller\HealthController$AppInfo.class
+com\deliverytech\delivery\entity\Pedido.class
+com\deliverytech\delivery\repository\ProdutoRepository.class
+com\deliverytech\delivery\service\RestauranteService.class
+com\deliverytech\delivery\controller\ClienteController.class
+com\deliverytech\delivery\repository\ClienteRepository.class
+com\deliverytech\delivery\service\PedidoService.class

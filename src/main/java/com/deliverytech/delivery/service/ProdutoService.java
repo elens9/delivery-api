@@ -22,8 +22,8 @@ public class ProdutoService {
         //validando dados de produto
         validarProduto(produto);
 
-        //definindo como ativo
-        produto.setAtivo(true);
+        //definindo como default disponivel
+        produto.setDisponivel(true);
 
         //definindo dataCadastro
         produto.setDataCadastro(LocalDateTime.now());
@@ -37,17 +37,25 @@ public class ProdutoService {
         return produtoRepository.findById(id);
     }
 
-    //buscar por nome
-    @Transactional(readOnly = true)
-    public Optional<Produto> buscarPorNome(String produto){
 
-        return produtoRepository.findByNomeContainingIgnoreCase(produto);
+    //buscar produto por restaurante
+    @Transactional(readOnly = true)
+    public List<Produto> buscarPorRestaurante(String restaurante){
+
+        return produtoRepository.findByRestauranteContainingIgnoreCase(restaurante);
     }
 
-    //listar todos os produtos
+    //buscar produto por categoria
     @Transactional(readOnly = true)
-    public List<Produto> listarProdutos(){
-        return produtoRepository.findAll();
+    public List<Produto> buscarPorCategoria(String categoria){
+        return produtoRepository.findByCategoriaContainingIgnoreCase(categoria);
+    }
+
+
+    //listar produtos disponiveis
+    @Transactional(readOnly = true)
+    public List<Produto> listarDisponiveis(){
+        return produtoRepository.findByDisponivelTrue();
     }
 
     //atualizar dados produto
@@ -58,7 +66,7 @@ public class ProdutoService {
         produto.setProduto(produto.getProduto());
         produto.setCategoria(produto.getCategoria());
         produto.setValor(produto.getValor());
-        produto.setDisponibilidade(produto.getDisponibilidade());
+        produto.setDisponivel(produto.getDisponivel());
         produto.setRestaurante(produto.getRestaurante());
 
         return produtoRepository.save(produto);
@@ -84,6 +92,10 @@ public class ProdutoService {
 
         if(produto.getProduto().length() < 2){
             throw new IllegalArgumentException("Nome deve ter pelo menos 2 caracteres");
+        }
+
+        if(produto.getValor() == null || produto.getValor() <= 0){
+            throw new IllegalArgumentException("Valor é obrigatório");
         }
     }
 }
