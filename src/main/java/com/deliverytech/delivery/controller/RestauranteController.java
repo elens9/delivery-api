@@ -71,8 +71,8 @@ public class RestauranteController {
 
     //listar restaurantes por ordem de avaliacao
     @GetMapping("/avaliacao/{avaliacao}")
-    public ResponseEntity<?> listarPorAvaliacao(){
-        List<Restaurante> restaurantes = restauranteService.listarPorAvaliacao();
+    public ResponseEntity<?> listarPorAvaliacao(@PathVariable Double avaliacao){
+        List<Restaurante> restaurantes = restauranteService.listarPorAvaliacao(avaliacao);
 
         if(!restaurantes.isEmpty()){
             return ResponseEntity.ok(restaurantes);

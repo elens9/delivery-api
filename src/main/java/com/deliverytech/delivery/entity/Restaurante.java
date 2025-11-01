@@ -20,7 +20,7 @@ public class Restaurante {
     private Long id;
     private String restaurante;
     private String categoria;
-    private Float avaliacao;
+    private Double avaliacao;
 
     //criando data_cadastro no banco
     @Column(name = "data_cadastro")

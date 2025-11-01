@@ -20,7 +20,7 @@ public interface RestauranteRepository extends JpaRepository<Restaurante, Long> 
     List<Restaurante> findByCategoriaContainingIgnoreCase(String categoria);
 
     //listar restaurantes por avaliacao descrescente
-    List<Restaurante> findAllByOrderByAvaliacaoDesc();
+    List<Restaurante> findByAvaliacaoGreaterThanEqualsOrderByAvaliacaoDesc(Double avaliacao);
 
     //buscar rastaurantes ativos
     List<Restaurante> findByAtivoTrue();

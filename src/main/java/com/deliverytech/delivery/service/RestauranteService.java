@@ -48,8 +48,8 @@ public class RestauranteService {
 
 
     //buscar restaurante por avaliacao em ordem descrescente
-    public List<Restaurante> listarPorAvaliacao(){
-        return restauranteRepository.findAllByOrderByAvaliacaoDesc();
+    public List<Restaurante> listarPorAvaliacao(Double avaliacaoMinima){
+        return restauranteRepository.findByAvaliacaoGreaterThanEqualsOrderByAvaliacaoDesc(avaliacaoMinima);
     }
 
     //listar restaurantes ativos

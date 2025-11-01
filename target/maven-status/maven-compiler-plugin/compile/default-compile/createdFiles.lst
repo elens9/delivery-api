@@ -4,12 +4,16 @@ com\deliverytech\delivery\service\ClienteService.class
 com\deliverytech\delivery\repository\RestauranteRepository.class
 com\deliverytech\delivery\controller\RestauranteController.class
 com\deliverytech\delivery\entity\Cliente.class
+com\deliverytech\delivery\controller\PedidoController.class
 com\deliverytech\delivery\repository\PedidoRepository.class
 com\deliverytech\delivery\entity\Restaurante.class
 com\deliverytech\delivery\controller\HealthController$AppInfo.class
 com\deliverytech\delivery\entity\Pedido.class
 com\deliverytech\delivery\repository\ProdutoRepository.class
+com\deliverytech\delivery\controller\HealthController.class
+com\deliverytech\delivery\DeliveryApiApplication.class
 com\deliverytech\delivery\service\RestauranteService.class
 com\deliverytech\delivery\controller\ClienteController.class
 com\deliverytech\delivery\repository\ClienteRepository.class
 com\deliverytech\delivery\service\PedidoService.class
+com\deliverytech\delivery\controller\ProdutoController.class
