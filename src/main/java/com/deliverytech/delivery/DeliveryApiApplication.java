@@ -1,14 +1,13 @@
 package com.deliverytech.delivery;
 
-import com.deliverytech.delivery.entity.Cliente;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
+@EnableAsync
 public class DeliveryApiApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(DeliveryApiApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(DeliveryApiApplication.class, args);
+    }
 }

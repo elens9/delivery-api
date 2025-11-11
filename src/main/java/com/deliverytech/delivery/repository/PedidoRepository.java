@@ -1,28 +1,21 @@
 package com.deliverytech.delivery.repository;
 
-import com.deliverytech.delivery.entity.Pedido;
-import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.deliverytech.delivery.entity.Pedido;
+import com.deliverytech.delivery.entity.StatusPedido;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 
-    //buscar pedidos por cliente
-    List<Pedido> findByClienteContainingIgnoreCase(String cliente);
+    List<Pedido> findByClienteId(Long clienteId);
 
-    //buscar pedidos por status aberto
-    List<Pedido> findByAberto();
+    List<Pedido> findByStatus(StatusPedido status);
 
-    //buscar pedidos por status finalizado
-    List<Pedido> findByFinalizado();
+    List<Pedido> findTop10ByOrderByDataPedidoDesc();
 
-    //buscar pedidos por data
-    List<Pedido> findByLocalDateTime();
-
-    //calcular valor do pedido
-    List<Pedido> calcularPedido(Pedido pedido);
-
-    //gerar relatorio dos pedidos
-    List<Pedido> findAllPedidos();
+    List<Pedido> findByDataPedidoBetween(LocalDateTime inicio, LocalDateTime fim);
 }

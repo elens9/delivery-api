@@ -1,0 +1,14 @@
+package com.deliverytech.delivery.entity;
+
+public enum NotificationType {
+    PEDIDO_CONFIRMADO,
+    PEDIDO_EM_PREPARO,
+    PEDIDO_SAIU_PARA_ENTREGA,
+    PEDIDO_ENTREGUE,
+    PEDIDO_CANCELADO,
+    PROMOCAO,
+    NOVO_RESTAURANTE,
+    ATUALIZACAO_STATUS,
+    PAGAMENTO_CONFIRMADO,
+    PAGAMENTO_RECUSADO
+}

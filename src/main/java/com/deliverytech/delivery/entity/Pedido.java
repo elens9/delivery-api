@@ -1,37 +1,44 @@
 package com.deliverytech.delivery.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
 @Table(name = "pedidos")
-
 public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String pedido;
-    private int quantidade;
-    private String cliente;
-    private Double valor;
 
+    @Column(nullable = false)
+    private LocalDateTime dataPedido = LocalDateTime.now();
 
-    //data do pedido
-    @Column(name = "data_pedido")
-    private LocalDateTime dataPedido;
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status = StatusPedido.PENDENTE;
 
-    //pedido ativo
-    @Column(nullable = true)
-    private boolean aberto, finalizado;
+    @Column(precision = 10, scale = 2)
+    private BigDecimal total;
 
-    public void finalizar(){
-        this.aberto = false;
+    @Column(nullable = false)
+    private Long clienteId;
+
+    @Column(nullable = false)
+    private Long restauranteId;
+
+    private String enderecoEntrega;
+
+    @PrePersist
+    protected void onCreate() {
+        if (dataPedido == null) {
+            dataPedido = LocalDateTime.now();
+        }
     }
+}
+
+enum StatusPedido {
+    PENDENTE, CONFIRMADO, PREPARANDO, SAIU_PARA_ENTREGA, ENTREGUE, CANCELADO
 }

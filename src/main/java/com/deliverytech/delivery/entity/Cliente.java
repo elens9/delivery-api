@@ -1,39 +1,26 @@
 package com.deliverytech.delivery.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import javax.persistence.*;
 
-import java.time.LocalDateTime;
-
-@Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
 @Table(name = "clientes")
-
 public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
+
+    @Column(nullable = false, length = 100)
     private String nome;
-    private String telefone;
+
+    @Column(nullable = false, unique = true, length = 100)
     private String email;
-    private String endereco;
 
+    @Column(length = 20)
+    private String telefone;
 
-    @Column(name = "data_cadastro")
-    private LocalDateTime dataCadastro;
-
-    @Column(nullable = true)
-    private Boolean ativo;
-
-    public void inativar(){
-        this.ativo = false;
-    }
-
-
+    private Boolean ativo = true;
 }
